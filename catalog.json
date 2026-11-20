@@ -16,7 +16,7 @@
       },
       "artifact": {
         "name": "robertn_waze_cluster@0.6.13.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/robertn_waze_cluster@0.6.13.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/robertn_waze_cluster@0.6.13.tgz",
         "size": 218777,
         "sha256": "3140df422d144113dcd70524843d1b68ac83863e84e4995076dad11a62654321"
       }
@@ -32,7 +32,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "draggy@2.6.1.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/draggy@2.6.1.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/draggy@2.6.1.tgz",
         "size": 1310984,
         "sha256": "1181e0bcf8981d767e868d99392b85978ff41c2ee53fc1eda31dfd72786ce1c0"
       },
@@ -52,7 +52,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "service@1.6.4.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/service@1.6.4.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/service@1.6.4.tgz",
         "size": 1309067,
         "sha256": "40232a06a358bd4503d6c5164f8bc75f1b8845d4bf2864d57a59f184c4dd7a47"
       },
@@ -71,7 +71,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "warmup@1.9.1.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/warmup@1.9.1.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/warmup@1.9.1.tgz",
         "size": 1304634,
         "sha256": "47a6cf352e373477107b963194cbab8fe4b175aca0422619dbc266ce5f1a819f"
       },
@@ -90,7 +90,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "brake_test@1.5.22.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/brake_test@1.5.22.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/brake_test@1.5.22.tgz",
         "size": 1310671,
         "sha256": "62516440eaf79ec975f60284b7c9b7e8a1ee8e960ea96f22a141e344cb627588"
       },
@@ -110,7 +110,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "gforce@1.6.23.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/gforce@1.6.23.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/gforce@1.6.23.tgz",
         "size": 1310065,
         "sha256": "bc1fc29886eaf9a25a2ab1e404b212fbba851e2024e787f7f6ad7e43eb87c16e"
       },
@@ -129,7 +129,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "dyno@1.6.4.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/dyno@1.6.4.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/dyno@1.6.4.tgz",
         "size": 1307332,
         "sha256": "dd7a26367a7ec2025a0d4645063f8acf8d00ad3c6c08284abab2f4aa3640d5e4"
       },
@@ -148,7 +148,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "live_data@1.0.19.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/live_data@1.0.19.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/live_data@1.0.19.tgz",
         "size": 1388376,
         "sha256": "841593e9b5a353af47be4c027cb3067699bcd3394f8f2dda8212730dcce2ca9c"
       },
@@ -168,7 +168,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "edrive@2.11.1.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/edrive@2.11.1.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/edrive@2.11.1.tgz",
         "size": 1402949,
         "sha256": "4b6ae9aaf5f7857a1aae4f511a27f65ca37f33c6e6ba01bdbdc3fc71fea9de39"
       },
@@ -191,7 +191,7 @@
       },
       "artifact": {
         "name": "dtc_scanner@2.9.9.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/dtc_scanner@2.9.9.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/dtc_scanner@2.9.9.tgz",
         "size": 6495675,
         "sha256": "af427b31bbb2cb156bf869d4f73a39691c1e2787da17e66de8c650086c93496c"
       }
@@ -210,7 +210,7 @@
       },
       "artifact": {
         "name": "redline@2.0.46.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/redline@2.0.46.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/redline@2.0.46.tgz",
         "size": 1522350,
         "sha256": "315b6a3b4f1c1b2fce131f3b940308b1d63d55b051d69bacafb3a8eb0dd1e4f2"
       }
@@ -230,7 +230,7 @@
       },
       "artifact": {
         "name": "zf8hp@1.5.9.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/zf8hp@1.5.9.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/zf8hp@1.5.9.tgz",
         "size": 1301368,
         "sha256": "ab6f24b7df381e82c43e42a73534f0168d59234a78d6cf590ea6c62219172b8d"
       }
@@ -250,7 +250,7 @@
       },
       "artifact": {
         "name": "ambient_config@2.7.15.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/ambient_config@2.7.15.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/ambient_config@2.7.15.tgz",
         "size": 1345642,
         "sha256": "fc4ba63c133ebdf77b4d6a2d483baf9506995d89a1e881b569f6ee3cf83d6369"
       }
@@ -270,7 +270,7 @@
       },
       "artifact": {
         "name": "live_adjustments@0.9.11.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/live_adjustments@0.9.11.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/live_adjustments@0.9.11.tgz",
         "size": 1493545,
         "sha256": "5cc6e181543ac7b59800b6a4dad52734e5b8f2c709b166dc97e045c6384f051c"
       }
@@ -290,7 +290,7 @@
       },
       "artifact": {
         "name": "car_vitals@2.27.10.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/car_vitals@2.27.10.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/catalog/car_vitals@2.27.10.tgz",
         "size": 1344562,
         "sha256": "f79bf66e703637fc282742a1602a4e4278e9a50f9b5119f59607e5be66ef899a"
       }
@@ -306,7 +306,7 @@
       "uninstallable": true,
       "artifact": {
         "name": "sys_monitor@1.0.9.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/hexlay-1.0.9/sys_monitor@1.0.9.tgz",
+        "url": "https://github.com/angel-detailing/angel-detailing/releases/download/hexlay-1.0.9/sys_monitor@1.0.9.tgz",
         "size": 868389,
         "sha256": "3ebac9b02bb50c59b6d07c37a710895838b20be6dee0a4a85fbd28957cb8badc"
       }
