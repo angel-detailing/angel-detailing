@@ -2,26 +2,6 @@
   "schema": 2,
   "components": [
     {
-      "id": "car_vitals",
-      "kind": "app",
-      "version": "2.27.9",
-      "title": "M Vitals (RU)",
-      "mguHmi": [
-        "ID7"
-      ],
-      "uninstallable": true,
-      "artifact": {
-        "name": "car_vitals@2.27.9.tgz",
-        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/car_vitals@2.27.9.tgz",
-        "size": 1341544,
-        "sha256": "f869a23f616e0798bbc1d8fdb6c8138bd15477663b07b8181f845f74e536f61e"
-      },
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      }
-    },
-    {
       "id": "robertn_waze_cluster",
       "kind": "app",
       "build": "unit",
@@ -253,6 +233,66 @@
         "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/zf8hp@1.5.9.tgz",
         "size": 1301368,
         "sha256": "ab6f24b7df381e82c43e42a73534f0168d59234a78d6cf590ea6c62219172b8d"
+      }
+    },
+    {
+      "id": "ambient_config",
+      "kind": "app",
+      "title": "Настройка подсветки (RU)",
+      "version": "2.7.15",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "artifact": {
+        "name": "ambient_config@2.7.15.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/ambient_config@2.7.15.tgz",
+        "size": 1345642,
+        "sha256": "fc4ba63c133ebdf77b4d6a2d483baf9506995d89a1e881b569f6ee3cf83d6369"
+      }
+    },
+    {
+      "id": "live_adjustments",
+      "kind": "app",
+      "title": "Настройка двигателя (RU)",
+      "version": "0.9.11",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "artifact": {
+        "name": "live_adjustments@0.9.11.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/live_adjustments@0.9.11.tgz",
+        "size": 1493545,
+        "sha256": "5cc6e181543ac7b59800b6a4dad52734e5b8f2c709b166dc97e045c6384f051c"
+      }
+    },
+    {
+      "id": "car_vitals",
+      "kind": "app",
+      "title": "M Vitals (RU)",
+      "version": "2.27.10",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "artifact": {
+        "name": "car_vitals@2.27.10.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/car_vitals@2.27.10.tgz",
+        "size": 1344562,
+        "sha256": "f79bf66e703637fc282742a1602a4e4278e9a50f9b5119f59607e5be66ef899a"
       }
     }
   ]
