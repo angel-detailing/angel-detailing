@@ -98,6 +98,103 @@
       "requires": {
         "idrive7-renderd": "2.1.15"
       }
+    },
+    {
+      "id": "brake_test",
+      "kind": "app",
+      "version": "1.5.22",
+      "title": "Тест тормозов (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "brake_test@1.5.22.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/brake_test@1.5.22.tgz",
+        "size": 1310671,
+        "sha256": "62516440eaf79ec975f60284b7c9b7e8a1ee8e960ea96f22a141e344cb627588"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      }
+    },
+    {
+      "id": "gforce",
+      "kind": "app",
+      "version": "1.6.23",
+      "title": "Перегрузка (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "gforce@1.6.23.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/gforce@1.6.23.tgz",
+        "size": 1310065,
+        "sha256": "bc1fc29886eaf9a25a2ab1e404b212fbba851e2024e787f7f6ad7e43eb87c16e"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      }
+    },
+    {
+      "id": "dyno",
+      "kind": "app",
+      "version": "1.6.4",
+      "title": "Диностенд (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "dyno@1.6.4.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/dyno@1.6.4.tgz",
+        "size": 1307332,
+        "sha256": "dd7a26367a7ec2025a0d4645063f8acf8d00ad3c6c08284abab2f4aa3640d5e4"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      }
+    },
+    {
+      "id": "live_data",
+      "kind": "app",
+      "version": "1.0.19",
+      "title": "Живые данные (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "live_data@1.0.19.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/live_data@1.0.19.tgz",
+        "size": 1388376,
+        "sha256": "841593e9b5a353af47be4c027cb3067699bcd3394f8f2dda8212730dcce2ca9c"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      }
+    },
+    {
+      "id": "edrive",
+      "kind": "app",
+      "version": "2.11.1",
+      "title": "eDrive (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "edrive@2.11.1.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/edrive@2.11.1.tgz",
+        "size": 1402949,
+        "sha256": "4b6ae9aaf5f7857a1aae4f511a27f65ca37f33c6e6ba01bdbdc3fc71fea9de39"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      }
     }
   ]
 }
