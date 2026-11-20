@@ -294,6 +294,22 @@
         "size": 1344562,
         "sha256": "f79bf66e703637fc282742a1602a4e4278e9a50f9b5119f59607e5be66ef899a"
       }
+    },
+    {
+      "id": "sys_monitor",
+      "kind": "app",
+      "version": "1.0.9",
+      "title": "Системный монитор (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "sys_monitor@1.0.9.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/hexlay-1.0.9/sys_monitor@1.0.9.tgz",
+        "size": 868389,
+        "sha256": "3ebac9b02bb50c59b6d07c37a710895838b20be6dee0a4a85fbd28957cb8badc"
+      }
     }
   ]
 }
