@@ -1,0 +1,103 @@
+{
+  "schema": 2,
+  "components": [
+    {
+      "id": "car_vitals",
+      "kind": "app",
+      "version": "2.27.9",
+      "title": "M Vitals (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "car_vitals@2.27.9.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/car_vitals@2.27.9.tgz",
+        "size": 1341544,
+        "sha256": "f869a23f616e0798bbc1d8fdb6c8138bd15477663b07b8181f845f74e536f61e"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      }
+    },
+    {
+      "id": "robertn_waze_cluster",
+      "kind": "app",
+      "build": "unit",
+      "version": "0.6.13",
+      "title": "Карты на приборной панели (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "waze-on-cluster": "0.10.7"
+      },
+      "artifact": {
+        "name": "robertn_waze_cluster@0.6.13.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/robertn_waze_cluster@0.6.13.tgz",
+        "size": 218777,
+        "sha256": "3140df422d144113dcd70524843d1b68ac83863e84e4995076dad11a62654321"
+      }
+    },
+    {
+      "id": "draggy",
+      "kind": "app",
+      "version": "2.6.1",
+      "title": "Драг-таймер (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "draggy@2.6.1.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/draggy@2.6.1.tgz",
+        "size": 1310984,
+        "sha256": "1181e0bcf8981d767e868d99392b85978ff41c2ee53fc1eda31dfd72786ce1c0"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      }
+    },
+    {
+      "id": "service",
+      "kind": "app",
+      "version": "1.6.4",
+      "title": "Обслуживание (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "service@1.6.4.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/service@1.6.4.tgz",
+        "size": 1309067,
+        "sha256": "40232a06a358bd4503d6c5164f8bc75f1b8845d4bf2864d57a59f184c4dd7a47"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      }
+    },
+    {
+      "id": "warmup",
+      "kind": "app",
+      "version": "1.9.1",
+      "title": "Прогрев (RU)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "artifact": {
+        "name": "warmup@1.9.1.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/warmup@1.9.1.tgz",
+        "size": 1304634,
+        "sha256": "47a6cf352e373477107b963194cbab8fe4b175aca0422619dbc266ce5f1a819f"
+      },
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      }
+    }
+  ]
+}
