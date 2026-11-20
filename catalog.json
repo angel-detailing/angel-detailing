@@ -195,6 +195,65 @@
       "requires": {
         "idrive7-renderd": "2.1.15"
       }
+    },
+    {
+      "id": "dtc_scanner",
+      "kind": "app",
+      "title": "Сканер ошибок (RU)",
+      "version": "2.9.9",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "artifact": {
+        "name": "dtc_scanner@2.9.9.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/dtc_scanner@2.9.9.tgz",
+        "size": 6495675,
+        "sha256": "af427b31bbb2cb156bf869d4f73a39691c1e2787da17e66de8c650086c93496c"
+      }
+    },
+    {
+      "id": "redline",
+      "kind": "app",
+      "title": "Индикатор переключения передач (RU)",
+      "version": "2.0.46",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "artifact": {
+        "name": "redline@2.0.46.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/redline@2.0.46.tgz",
+        "size": 1522350,
+        "sha256": "315b6a3b4f1c1b2fce131f3b940308b1d63d55b051d69bacafb3a8eb0dd1e4f2"
+      }
+    },
+    {
+      "id": "zf8hp",
+      "kind": "app",
+      "title": "Диагностика ZF 8HP (RU)",
+      "version": "1.5.9",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "artifact": {
+        "name": "zf8hp@1.5.9.tgz",
+        "url": "https://github.com/danielvibes-blip/angel-detailing/releases/download/catalog/zf8hp@1.5.9.tgz",
+        "size": 1301368,
+        "sha256": "ab6f24b7df381e82c43e42a73534f0168d59234a78d6cf590ea6c62219172b8d"
+      }
     }
   ]
 }
