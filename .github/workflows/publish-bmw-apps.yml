@@ -1,0 +1,156 @@
+name: Publish BMW Apps
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_tag:
+        description: 'Draft release tag containing catalog.json and changed TGZ files. Leave blank to check production.'
+        type: string
+        required: false
+      publish:
+        description: 'Publish the candidate and update the BMW catalog'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-bmw-apps
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      CANDIDATE_TAG: ${{ inputs.candidate_tag }}
+      PUBLISH: ${{ inputs.publish }}
+    steps:
+      - name: Validate and publish
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64
+          import hashlib
+          import json
+          import os
+          import re
+          import subprocess
+          import tempfile
+          import urllib.request
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+
+          repo = os.environ['GITHUB_REPOSITORY']
+          candidate = os.environ.get('CANDIDATE_TAG', '')
+          publish = os.environ.get('PUBLISH') == 'true'
+          prefix = f'https://github.com/{repo}/releases/download/'
+          component_name = re.compile(r'[a-zA-Z0-9_-]+')
+          release_name = re.compile(r'[a-zA-Z0-9][a-zA-Z0-9._-]{0,99}')
+          version_pattern = re.compile(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)')
+
+          def require(condition, error):
+              if not condition:
+                  raise SystemExit(error)
+
+          def gh(*args, payload=None):
+              return subprocess.check_output(
+                  ['gh', *args, '--repo', repo] if args[0] == 'release' else ['gh', *args],
+                  input=payload, text=True,
+              )
+
+          def version(value):
+              require(version_pattern.fullmatch(value), f'Invalid version: {value}')
+              return tuple(map(int, value.split('.')))
+
+          def index(catalog):
+              require(catalog.get('schema') == 2, 'Expected schema 2')
+              result = {}
+              for entry in catalog['components']:
+                  name = entry['id']
+                  require(component_name.fullmatch(name) and name not in result, f'Invalid or duplicate ID: {name}')
+                  require(entry['kind'] == 'app' and 'ID7' in entry['mguHmi'], f'Not an iDrive 7 app: {name}')
+                  version(entry['version'])
+                  result[name] = entry
+              return result
+
+          def check_bytes(stream, artifact):
+              digest = hashlib.sha256()
+              size = 0
+              while block := stream.read(1024 * 1024):
+                  digest.update(block)
+                  size += len(block)
+              require(size == artifact['size'] and digest.hexdigest() == artifact['sha256'],
+                      f"Size or SHA-256 mismatch: {artifact['name']}")
+
+          def check_public(entry):
+              artifact = entry['artifact']
+              url = artifact['url']
+              require(url.startswith(prefix), f"Unexpected artifact host: {entry['id']}")
+              with urllib.request.urlopen(url, timeout=30) as stream:
+                  check_bytes(stream, artifact)
+              print(f"Verified {entry['id']} {entry['version']}", flush=True)
+
+          live_path = f'repos/{repo}/contents/catalog.json'
+          live_file = json.loads(gh('api', live_path + '?ref=main'))
+          live_catalog = json.loads(base64.b64decode(live_file['content']))
+          live = index(live_catalog)
+          require(not publish or candidate, 'Publishing requires a candidate release tag')
+          if not candidate:
+              with ThreadPoolExecutor(max_workers=5) as pool:
+                  list(pool.map(check_public, live.values()))
+              print(f'Dry run: {len(live)} public apps verified. No changes published.')
+              raise SystemExit(0)
+
+          require(release_name.fullmatch(candidate) and candidate != 'catalog', 'Use a separate candidate release tag')
+          release = json.loads(gh('release', 'view', candidate, '--json', 'isDraft,assets,tagName'))
+          require(release['tagName'] == candidate, 'Unexpected release tag')
+          assets = {asset['name'] for asset in release['assets']}
+          require('catalog.json' in assets, 'Candidate is missing catalog.json')
+          with tempfile.TemporaryDirectory() as workspace:
+              staging = Path(workspace)
+              gh('release', 'download', candidate, '--pattern', 'catalog.json', '--dir', workspace)
+              changes = index(json.loads((staging / 'catalog.json').read_text()))
+              require(changes, 'Candidate has no apps')
+              merged = dict(live)
+              for name, entry in changes.items():
+                  artifact = entry['artifact']
+                  filename = f"{name}@{entry['version']}.tgz"
+                  require(artifact['name'] == filename and filename in assets, f'Missing asset: {filename}')
+                  artifact['url'] = prefix + candidate + '/' + filename
+                  if name in live and live[name] != entry:
+                      require(version(entry['version']) > version(live[name]['version']),
+                              f"{name}: version must increase beyond {live[name]['version']}")
+                  gh('release', 'download', candidate, '--pattern', filename, '--dir', workspace)
+                  with (staging / filename).open('rb') as stream:
+                      check_bytes(stream, artifact)
+                  merged[name] = entry
+                  print(f"Candidate verified: {name} {entry['version']}", flush=True)
+
+          if not publish:
+              print(f'Dry run: {len(changes)} candidate apps verified. No changes published.')
+              raise SystemExit(0)
+
+          if release['isDraft']:
+              gh('release', 'edit', candidate, '--draft=false', '--latest=false')
+          with ThreadPoolExecutor(max_workers=5) as pool:
+              list(pool.map(check_public, merged.values()))
+          if merged == live:
+              print('Catalog already points to these versions.')
+              raise SystemExit(0)
+          result = dict(live_catalog, components=list(merged.values()))
+          content = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
+          payload = {
+              'message': f'Publish BMW Apps from {candidate}',
+              'content': base64.b64encode(content.encode()).decode(),
+              'sha': live_file['sha'],
+              'branch': 'main',
+          }
+          gh('api', '--method', 'PUT', live_path, '--input', '-', payload=json.dumps(payload))
+          published = json.loads(gh('api', live_path + '?ref=main'))
+          require(json.loads(base64.b64decode(published['content'])) == result, 'Catalog read-back verification failed')
+          print(f'Published {len(changes)} apps. Catalog contains {len(merged)} apps.')
+          PY
